@@ -1,0 +1,13 @@
+.selectedValue {
+  width: 400px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.selectedValue span {
+  text-align: center;
+}
+
+.selected {
+  color: rgb(0, 47, 255);
+}

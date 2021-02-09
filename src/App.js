@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React, { useState } from 'react'
+
+import { nanoid } from 'nanoid'
+
+import DropdownList from './components/DropdownList/DropdownList'
+import SelectedValue from './components/DropdownList/SelectedValue/SelectedValue'
 
 function App() {
+  const data = ['profile information', 'change password', 'become PRO', 'help', 'log out']
+
+  const [selected, setSelected] = useState('')
+
+  const dataWithId = data.map(e => {
+    return {
+      value: e,
+      id: nanoid(),
+    }
+  })
+
+  const onGetSelected = value => {
+    setSelected(value)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {selected && <SelectedValue selected={selected} />}
+      <DropdownList data={dataWithId} onGetSelected={onGetSelected} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

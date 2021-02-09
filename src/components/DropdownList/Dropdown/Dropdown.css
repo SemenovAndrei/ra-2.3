@@ -1,0 +1,11 @@
+.dropdown__btn {
+  box-sizing: border-box;
+  width: 400px;
+  padding: 20px;
+  font-size: 2rem;
+  color: #fff;
+  border: none;
+  background-color: rgb(90, 161, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
